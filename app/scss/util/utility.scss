@@ -25,7 +25,11 @@
     grid-column: 1;
     grid-row: 1 / 2;
   }
-
+  // Phone Landscape
+  @include respond(phone-landscape) {
+    grid-column: 1;
+    grid-row: 1 / 2;
+  }
 }
 
 .grid-item-2 {
@@ -35,7 +39,11 @@
   @include respond(sm-phone) {
     grid-column: 1;
     grid-row: 4 / span 2;
-   
+  }
+  // Phone Landscape
+  @include respond(phone-landscape) {
+    grid-column: 1;
+    grid-row: 4 / span 2;
   }
 }
 
@@ -45,6 +53,11 @@
 
   // Small-phone
   @include respond(sm-phone) {
+    grid-column: 1;
+    grid-row: 6 / span 2;   
+  }
+  // Phone Landscape
+  @include respond(phone-landscape) {
     grid-column: 1;
     grid-row: 6 / span 2;   
   }
