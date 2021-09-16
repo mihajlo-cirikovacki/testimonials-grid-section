@@ -7,14 +7,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // Small-phone
-  @include respond(sm-phone) {
-    padding: 7.1rem 2.4rem;
-  }
+  
   // Phone Landspace
   @include respond(phone-landscape) {
     padding: 7.5rem 2.4rem;
+  }
+  // Small-phone
+  @include respond(sm-phone) {
+    padding: 7.1rem 2.4rem;
   }
 }
 
@@ -25,15 +25,15 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 3rem;
   row-gap: 2.4rem;
-
-  // Small-phone
-  @include respond(sm-phone) {
+  
+  // Phone Landscape
+  @include respond(phone-landscape) {
     min-height: 18.24rem;
     grid-template-columns: 1fr;
     column-gap: 0;
   }
-  // Phone Landscape
-  @include respond(phone-landscape) {
+  // Small-phone
+  @include respond(sm-phone) {
     min-height: 18.24rem;
     grid-template-columns: 1fr;
     column-gap: 0;
@@ -56,13 +56,13 @@
     font-size: 10.4rem;
     color: var(--light-violet);
     z-index: -100;
-
-    // Small-phone
-    @include respond(sm-phone) {
-      right: 2.4rem
-    }
+    
     // Phone Landscape
     @include respond(phone-landscape) {
+      right: 2.4rem
+    }
+    // Small-phone
+    @include respond(sm-phone) {
       right: 2.4rem
     }
   } 
@@ -116,21 +116,22 @@
     }
   }
 
+  &:first-child &__text,
+  &:nth-child(2) &__text {
+    margin-top: 1.6rem;
+  }
+  
+  &:first-child &__text {
+    @include respond(sm-phone) {
+       margin-top: 4rem; 
+       margin-right: 1.6rem;    
+    }
+  }
+  
+
   &__text {
     font-size: 1.3rem;
     margin-top: 2.4rem;
-
-    &:nth-of-type(1),
-    &:nth-of-type(2) {
-      margin-top: 1.6rem;
-    }
-
-    // // Small-phone: :/ 2. Try > Frst profile on mobile > margin-top: 4rem; 
-    // &:nth-of-type(1) {
-    //   @include respond(sm-phone) {
-    //     margin-top: 4rem;    
-    //   }
-    // }
 
     // COLORS:
     &--gray {
@@ -138,17 +139,6 @@
     }
     &--light-gray-blue {
       color: var(--light-gray-blue); 
-    }
-
-    &:first-of-type {
-      // Small-phone
-      @include respond(sm-phone) {
-          margin-right: 1.6rem;    
-      }
-      // Phone Landscape
-      @include respond(phone-landscape) {
-          margin-right: 1.6rem;    
-      }
     }
   }
 }
