@@ -16,26 +16,34 @@
 //   }
 // }
 
-// === GRID ITEMS SPAN:
+// ==== GRID ITEMS SPAN:
 .grid-item {
   grid-column: 1 / span 2;
-
+  
+  // Phone Landscape
+  @include respond(phone-landscape) {
+    grid-column: 1;
+    grid-row: 1 / 2;
+  }
   // Small-phone
   @include respond(sm-phone) {
     grid-column: 1;
     grid-row: 1 / 2;
   }
-
 }
 
 .grid-item-2 {
   grid-column: 2 / span 2;
 
+  // Phone Landscape
+  @include respond(phone-landscape) {
+    grid-column: 1;
+    grid-row: 4 / span 2;
+  }
   // Small-phone
   @include respond(sm-phone) {
     grid-column: 1;
     grid-row: 4 / span 2;
-   
   }
 }
 
@@ -43,6 +51,11 @@
   grid-column: 4 / 5;
   grid-row: 1 / span 2;
 
+  // Phone Landscape
+  @include respond(phone-landscape) {
+    grid-column: 1;
+    grid-row: 6 / span 2;   
+  }
   // Small-phone
   @include respond(sm-phone) {
     grid-column: 1;
